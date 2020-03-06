@@ -1,0 +1,17 @@
+name: Run
+on: push
+jobs:
+  test:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout ${{ github.sha }}
+      uses: actions/checkout@v2
+    - name: Use Go 1.13
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.13
+    - name: Compile
+      run: go build simulator.go
+    - name: Run for a minute
+      run: timeout 1m go run simulator.go || true
