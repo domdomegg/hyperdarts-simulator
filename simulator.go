@@ -40,7 +40,7 @@ func humanize(n int) string {
 }
 
 // Play the dart game, returning the score
-// It makes it a big ugly, but using the squared values makes calculations a lot
+// It makes it a bit ugly, but using the squared values makes calculations a lot
 // more efficient, as it avoids lots of square roots and multiplications.
 func playGame() int {
 	score := 1
